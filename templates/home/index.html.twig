@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+    <div class="container w-40">
+        <form class="form-inline ml-5" action="{{ path('phonebook_search') }}" method="post">
+            <div class="form-group mx-sm-3 mb-2">
+                <label class="mr-4">{{ 'search_in'|trans }}</label>
+                <input type="text" class="form-control" name="search"  placeholder="exp: 0610844728">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">{{ 'search'|trans }}</button>
+        </form>
+    </div>
+    <div class="container w-40">
+        {# total items count #}
+        <div class="count">
+            {% if phonesbook.getTotalItemCount|length > 0 %}
+                <h2 class="mb-4"><span class="badge badge-secondary">{{ phonesbook.getTotalItemCount }} {{ 'result found'|trans }}</span></h2>
+            {% else %}
+                <h2 class="mb-4"><span class="badge badge-secondary">{{ 'no result found'|trans }}</span></h2>
+            {% endif %}
+        </div>
+        <div class="row">
+            {% for phonebook in phonesbook %}
+                <div class="col-md-4">
+                    {% include('phonebook/_phonebook.html.twig') %}
+                </div>
+
+            {% endfor %}
+        </div>
+
+        <div class="navigation">
+            {{ knp_pagination_render(phonesbook) }}
+        </div>
+    </div>
+{% endblock %}

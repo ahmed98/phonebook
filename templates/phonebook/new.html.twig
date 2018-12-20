@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'new phonebook'|trans }} !{% endblock %}
+
+{% block body %}
+<div class="main">
+
+    <div class="container w-50">
+        <h2>{{ 'create new phonebook'|trans }}</h2>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-primary"> {{ 'validate'|trans }}</button>
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}

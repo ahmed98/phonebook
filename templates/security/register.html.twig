@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter {% endblock %}
+
+{% block body %}
+<div class="main pt-5">
+    <div class="container w-50">
+           {{ form_start(form) }}
+           {{ form_row(form.username) }}
+           {{ form_row(form.email) }}
+           {{ form_row(form.plainPassword.first) }}
+           {{ form_row(form.plainPassword.second) }}
+
+           <button type="submit">Register!</button>
+           {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}
