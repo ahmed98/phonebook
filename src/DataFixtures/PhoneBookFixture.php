@@ -13,7 +13,7 @@ class PhoneBookFixture extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create();
-        for($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $property = new PhoneBook();
             $property->setName($faker->firstNameMale());
             $property->setPhone($faker->phoneNumber());

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Se connecter {% endblock %}
+{% block title %}{{ 'signup'|trans }} {% endblock %}
 
 {% block body %}
 <div class="main pt-5">
@@ -11,7 +11,7 @@
            {{ form_row(form.plainPassword.first) }}
            {{ form_row(form.plainPassword.second) }}
 
-           <button type="submit">Register!</button>
+           <button type="submit" class="btn btn-primary">{{ 'signup'|trans }}</button>
            {{ form_end(form) }}
     </div>
 </div>

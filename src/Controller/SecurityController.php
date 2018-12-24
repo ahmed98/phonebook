@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Form\UserType;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -21,7 +20,7 @@ class SecurityController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         $last_username = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/login.html.twig',[
+        return $this->render('security/login.html.twig', [
             'last_username' => $last_username,
             'error' => $error
         ]);
@@ -58,7 +57,8 @@ class SecurityController extends AbstractController
             return $this->redirectToRoute('home');
         }
 
-        return $this->render('security/register.html.twig',
+        return $this->render(
+            'security/register.html.twig',
             array('form' => $form->createView())
         );
     }

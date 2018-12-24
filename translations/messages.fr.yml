@@ -16,3 +16,7 @@ name_not_blank: le nom ne doit pas être vide
 phone_not_blank: le numéro de téléphone ne doit pas être vide
 result found: resultat(s) trouvé(s)
 not result found: Aucun resulat trouvé
+username: Identifiant
+password: Mot de passe
+signup: S'inscrire
+phone: Téléphone

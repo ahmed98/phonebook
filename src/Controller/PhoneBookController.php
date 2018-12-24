@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\Translation\TranslatorInterface;
+
 /**
  * @Route("/admin/phonebook")
  */
@@ -57,7 +58,6 @@ class PhoneBookController extends AbstractController
      */
     public function search(Request $request, PaginatorInterface $paginator, TranslatorInterface $translator)
     {
-
         $em = $this->getDoctrine()->getManager();
         $query = $em->getRepository(PhoneBook::class)->findByPhoneOrName($request->request->get('search'));
         $phonesbook = $paginator->paginate(
