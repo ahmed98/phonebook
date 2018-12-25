@@ -1,0 +1,4 @@
+<Directory /var/www/phonebook/public>
+    Require all granted
+    # ...
+</Directory>
